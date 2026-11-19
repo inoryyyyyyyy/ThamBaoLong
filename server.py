@@ -1,10 +1,12 @@
 import json
+import os
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
-PORT = 8050
+PORT = int(os.environ.get("PORT", "8050"))
 ROOT_DIR = Path(__file__).resolve().parent
-DATA_FILE = ROOT_DIR / "data" / "store.json"
+DATA_DIR = Path(os.environ.get("DATA_DIR", str(ROOT_DIR / "data")))
+DATA_FILE = DATA_DIR / "store.json"
 
 
 class StoreHandler(SimpleHTTPRequestHandler):
@@ -55,6 +57,6 @@ class StoreHandler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    server = ThreadingHTTPServer(("127.0.0.1", PORT), StoreHandler)
-    print(f"Serving at http://localhost:{PORT}")
+    server = ThreadingHTTPServer(("0.0.0.0", PORT), StoreHandler)
+    print(f"Serving at http://0.0.0.0:{PORT}")
     server.serve_forever()
