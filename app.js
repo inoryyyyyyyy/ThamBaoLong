@@ -9,12 +9,20 @@
 
   const STORAGE_KEYS = {
     shop: 'baolong_shop_v1',
-    products: 'baolong_products_v2',
+    categories: 'baolong_categories_v1',
+    products: 'baolong_products_v4',
     cart: 'baolong_cart_v1',
     pixel: 'baolong_pixel_v1',
     adminAuth: 'baolong_admin_auth_v1',
     adminSession: 'baolong_admin_session_v1'
   };
+
+  const DEFAULT_CATEGORIES = [
+    { id: 'lua-tao-cat', name: 'Thảm lụa tảo cát' },
+    { id: 'tham-tron', name: 'Thảm tròn' },
+    { id: 'tham-nhung', name: 'Thảm tuyết nhung' },
+    { id: 'tham-cua', name: 'Thảm cửa & Chùi chân' }
+  ];
 
   const STANDARD_DETAIL_TEXT =
     '✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n' +
@@ -26,7 +34,7 @@
       id: 'tham-lua-tao-cat-khang-nuoc',
       name: 'Thảm lụa tảo cát kháng nước',
       price: 4590000,
-      category: 'turkish',
+      category: 'lua-tao-cat',
       image: 'assets/products/tham-lua-tao-cat-khang-nuoc/1.png',
       material: 'Lụa tảo cát kháng nước cao cấp',
       origin: 'Nhập khẩu cao cấp',
@@ -34,18 +42,23 @@
       warranty: '24 tháng',
       description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: 'Mẫu 1', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/1.png', price: 4590000 },
-        { label: 'Mẫu 2', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/2.png', price: 4590000 },
-        { label: 'Mẫu 3', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/3.png', price: 4590000 },
-        { label: 'Mẫu 4', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/4.png', price: 4590000 },
-        { label: 'Mẫu 5', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/5.png', price: 4590000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/1.png' },
+        { label: 'Mẫu 2', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/2.png' },
+        { label: 'Mẫu 3', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/3.png' },
+        { label: 'Mẫu 4', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/4.png' },
+        { label: 'Mẫu 5', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/5.png' }
+      ],
+      sizes: [
+        { label: '160 x 230 cm', price: 4590000 },
+        { label: '200 x 300 cm', price: 5990000 },
+        { label: '240 x 340 cm', price: 7490000 }
       ]
     },
     {
       id: 'tham-lua-tao-cat-khang-nuoc-2mx3m',
       name: 'Thảm lụa tảo cát kháng nước size 2mx3m',
       price: 5990000,
-      category: 'luxury',
+      category: 'lua-tao-cat',
       image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/1.png',
       material: 'Lụa tảo cát kháng nước khổ lớn',
       origin: 'Nhập khẩu cao cấp',
@@ -53,18 +66,23 @@
       warranty: '24 tháng',
       description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: 'Mẫu 1 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/1.png', price: 5990000 },
-        { label: 'Mẫu 2 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/2.png', price: 5990000 },
-        { label: 'Mẫu 3 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/3.png', price: 5990000 },
-        { label: 'Mẫu 4 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/4.png', price: 5990000 },
-        { label: 'Mẫu 5 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/5.png', price: 5990000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/1.png' },
+        { label: 'Mẫu 2', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/2.png' },
+        { label: 'Mẫu 3', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/3.png' },
+        { label: 'Mẫu 4', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/4.png' },
+        { label: 'Mẫu 5', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/5.png' }
+      ],
+      sizes: [
+        { label: '200 x 300 cm', price: 5990000 },
+        { label: '240 x 340 cm', price: 7490000 },
+        { label: '300 x 400 cm', price: 9290000 }
       ]
     },
     {
       id: 'tham-tron-det-cao-cap',
       name: 'Thảm tròn dệt cao cấp',
       price: 4590000,
-      category: 'round',
+      category: 'tham-tron',
       image: 'assets/products/tham-tron-det-cao-cap/1.png',
       material: 'Sợi dệt cao cấp chống bám bụi',
       origin: 'Nhập khẩu cao cấp',
@@ -72,19 +90,24 @@
       warranty: '24 tháng',
       description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: 'Mẫu 1', image: 'assets/products/tham-tron-det-cao-cap/1.png', price: 4590000 },
-        { label: 'Mẫu 2', image: 'assets/products/tham-tron-det-cao-cap/2.png', price: 4590000 },
-        { label: 'Mẫu 3', image: 'assets/products/tham-tron-det-cao-cap/3.png', price: 4590000 },
-        { label: 'Mẫu 4', image: 'assets/products/tham-tron-det-cao-cap/4.png', price: 4590000 },
-        { label: 'Mẫu 5', image: 'assets/products/tham-tron-det-cao-cap/5.png', price: 4590000 },
-        { label: 'Mẫu 6', image: 'assets/products/tham-tron-det-cao-cap/6.png', price: 4590000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-tron-det-cao-cap/1.png' },
+        { label: 'Mẫu 2', image: 'assets/products/tham-tron-det-cao-cap/2.png' },
+        { label: 'Mẫu 3', image: 'assets/products/tham-tron-det-cao-cap/3.png' },
+        { label: 'Mẫu 4', image: 'assets/products/tham-tron-det-cao-cap/4.png' },
+        { label: 'Mẫu 5', image: 'assets/products/tham-tron-det-cao-cap/5.png' },
+        { label: 'Mẫu 6', image: 'assets/products/tham-tron-det-cao-cap/6.png' }
+      ],
+      sizes: [
+        { label: 'Đường kính 160 cm', price: 4590000 },
+        { label: 'Đường kính 200 cm', price: 5690000 },
+        { label: 'Đường kính 240 cm', price: 6990000 }
       ]
     },
     {
       id: 'tham-tron-long-cuu-de-det-1m6',
       name: 'Thảm tròn lông cừu đế dệt size 1m6',
       price: 3890000,
-      category: 'round',
+      category: 'tham-tron',
       image: 'assets/products/tham-tron-long-cuu-de-det-1m6/1.jpg',
       material: 'Lông cừu mềm mịn, đế dệt chống trượt',
       origin: 'Nhập khẩu cao cấp',
@@ -92,20 +115,24 @@
       warranty: '24 tháng',
       description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: 'Mẫu 1 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/1.jpg', price: 3890000 },
-        { label: 'Mẫu 2 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/2.png', price: 3890000 },
-        { label: 'Mẫu 3 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/3.png', price: 3890000 },
-        { label: 'Mẫu 4 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/4.png', price: 3890000 },
-        { label: 'Mẫu 5 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/5.png', price: 3890000 },
-        { label: 'Mẫu 6 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/6.png', price: 3890000 },
-        { label: 'Mẫu 7 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/7.jpg', price: 3890000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/1.jpg' },
+        { label: 'Mẫu 2', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/2.png' },
+        { label: 'Mẫu 3', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/3.png' },
+        { label: 'Mẫu 4', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/4.png' },
+        { label: 'Mẫu 5', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/5.png' },
+        { label: 'Mẫu 6', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/6.png' },
+        { label: 'Mẫu 7', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/7.jpg' }
+      ],
+      sizes: [
+        { label: 'Đường kính 160 cm', price: 3890000 },
+        { label: 'Đường kính 200 cm', price: 4890000 }
       ]
     },
     {
       id: 'tham-tuyet-nhung-cao-cap',
       name: 'Thảm tuyết nhung cao cấp',
       price: 4590000,
-      category: 'luxury',
+      category: 'tham-nhung',
       image: 'assets/products/tham-tuyet-nhung-cao-cap/1.jpg',
       material: 'Tuyết nhung siêu mịn cao cấp',
       origin: 'Nhập khẩu cao cấp',
@@ -113,18 +140,23 @@
       warranty: '24 tháng',
       description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: 'Mẫu 1', image: 'assets/products/tham-tuyet-nhung-cao-cap/1.jpg', price: 4590000 },
-        { label: 'Mẫu 2', image: 'assets/products/tham-tuyet-nhung-cao-cap/2.jpg', price: 4590000 },
-        { label: 'Mẫu 3', image: 'assets/products/tham-tuyet-nhung-cao-cap/3.jpg', price: 4590000 },
-        { label: 'Mẫu 4', image: 'assets/products/tham-tuyet-nhung-cao-cap/4.jpg', price: 4590000 },
-        { label: 'Mẫu 5', image: 'assets/products/tham-tuyet-nhung-cao-cap/5.jpg', price: 4590000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-tuyet-nhung-cao-cap/1.jpg' },
+        { label: 'Mẫu 2', image: 'assets/products/tham-tuyet-nhung-cao-cap/2.jpg' },
+        { label: 'Mẫu 3', image: 'assets/products/tham-tuyet-nhung-cao-cap/3.jpg' },
+        { label: 'Mẫu 4', image: 'assets/products/tham-tuyet-nhung-cao-cap/4.jpg' },
+        { label: 'Mẫu 5', image: 'assets/products/tham-tuyet-nhung-cao-cap/5.jpg' }
+      ],
+      sizes: [
+        { label: '160 x 230 cm', price: 4590000 },
+        { label: '200 x 300 cm', price: 5890000 },
+        { label: '240 x 340 cm', price: 7290000 }
       ]
     },
     {
       id: 'tham-luoi-chui-chan-50x80cm',
       name: 'Thảm lưới chùi chân 50x80cm',
       price: 490000,
-      category: 'turkish',
+      category: 'tham-cua',
       image: 'assets/products/tham-luoi-chui-chan-50x80cm/1.png',
       material: 'Sợi lưới cao cấp thấm hút, chống trượt',
       origin: 'Nhập khẩu cao cấp',
@@ -132,16 +164,20 @@
       warranty: '12 tháng',
       description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: 'Mẫu 1 (50x80cm)', image: 'assets/products/tham-luoi-chui-chan-50x80cm/1.png', price: 490000 },
-        { label: 'Mẫu 2 (50x80cm)', image: 'assets/products/tham-luoi-chui-chan-50x80cm/2.png', price: 490000 },
-        { label: 'Mẫu 3 (50x80cm)', image: 'assets/products/tham-luoi-chui-chan-50x80cm/3.png', price: 490000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-luoi-chui-chan-50x80cm/1.png' },
+        { label: 'Mẫu 2', image: 'assets/products/tham-luoi-chui-chan-50x80cm/2.png' },
+        { label: 'Mẫu 3', image: 'assets/products/tham-luoi-chui-chan-50x80cm/3.png' }
+      ],
+      sizes: [
+        { label: '50 x 80 cm', price: 490000 },
+        { label: '60 x 90 cm', price: 590000 }
       ]
     },
     {
       id: 'tham-de-cua',
       name: 'Thảm để cửa',
       price: 590000,
-      category: 'turkish',
+      category: 'tham-cua',
       image: 'assets/products/tham-de-cua/1.png',
       material: 'Sợi dệt cao cấp bền đẹp, dễ vệ sinh',
       origin: 'Nhập khẩu cao cấp',
@@ -149,26 +185,33 @@
       warranty: '12 tháng',
       description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: 'Mẫu 1', image: 'assets/products/tham-de-cua/1.png', price: 590000 },
-        { label: 'Mẫu 2', image: 'assets/products/tham-de-cua/2.png', price: 590000 },
-        { label: 'Mẫu 3', image: 'assets/products/tham-de-cua/3.png', price: 590000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-de-cua/1.png' },
+        { label: 'Mẫu 2', image: 'assets/products/tham-de-cua/2.png' },
+        { label: 'Mẫu 3', image: 'assets/products/tham-de-cua/3.png' }
+      ],
+      sizes: [
+        { label: '50 x 80 cm', price: 590000 },
+        { label: '60 x 90 cm', price: 690000 }
       ]
     }
   ];
 
   // State
   let shopConfig = loadShopConfig();
+  let categories = loadCategories();
   let pixelConfig = loadPixelConfig();
   let products = loadProducts();
   let currentCategory = 'all';
   let searchQuery = '';
   let currentProductId = null;
   let selectedVariantIndex = 0;
+  let selectedSizeIndex = null;
   let cart = loadCart();
   let checkoutMode = 'cart'; // 'cart' | 'buy-now'
   let buyNowItem = null;
   let editingProductId = null;
   let editingVariants = [];
+  let editingSizes = [];
   let initializedPixelId = null;
   let searchPixelTimer = null;
 
@@ -232,7 +275,29 @@
     } catch {
       showToast('Ảnh quá lớn, không thể lưu vào bộ nhớ trình duyệt');
     }
-    syncToServer();
+    return syncToServer();
+  }
+
+  function loadCategories() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEYS.categories);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch {
+      // ignore
+    }
+    return JSON.parse(JSON.stringify(DEFAULT_CATEGORIES));
+  }
+
+  function saveCategories() {
+    try {
+      localStorage.setItem(STORAGE_KEYS.categories, JSON.stringify(categories));
+    } catch {
+      // ignore
+    }
+    return syncToServer();
   }
 
   function loadProducts() {
@@ -254,7 +319,7 @@
     } catch {
       showToast('Dữ liệu ảnh quá lớn, vui lòng chọn ảnh nhẹ hơn');
     }
-    syncToServer();
+    return syncToServer();
   }
 
   function loadCart() {
@@ -299,7 +364,7 @@
     } catch {
       // ignore
     }
-    syncToServer();
+    return syncToServer();
   }
 
   function isHttpOrigin() {
@@ -312,7 +377,7 @@
       await fetch('/api/data', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ shopConfig, products, pixelConfig })
+        body: JSON.stringify({ shopConfig, categories, products, pixelConfig })
       });
     } catch {
       // ignore when running on static-only server
@@ -333,6 +398,10 @@
             avatar: d.shopConfig.avatar || DEFAULT_AVATAR
           };
           localStorage.setItem(STORAGE_KEYS.shop, JSON.stringify(shopConfig));
+        }
+        if (Array.isArray(d.categories) && d.categories.length > 0) {
+          categories = d.categories;
+          localStorage.setItem(STORAGE_KEYS.categories, JSON.stringify(categories));
         }
         if (Array.isArray(d.products) && d.products.length > 0) {
           products = d.products;
@@ -449,6 +518,28 @@
     });
   }
 
+  async function uploadImageFile(file, maxSize = 720) {
+    const dataUrl = await readFileAsCompressedDataURL(file, maxSize);
+    if (isHttpOrigin() && typeof fetch === 'function') {
+      try {
+        const res = await fetch('/api/upload', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ dataUrl, filename: file.name })
+        });
+        if (res.ok) {
+          const json = await res.json();
+          if (json && json.ok && json.path) {
+            return json.path;
+          }
+        }
+      } catch {
+        // fallback to dataUrl when server upload is unavailable
+      }
+    }
+    return dataUrl;
+  }
+
   function showToast(msg) {
     toastEl.textContent = msg;
     toastEl.classList.remove('hidden');
@@ -474,13 +565,19 @@
     }
   }
 
-  function addToCart(product, variantIdx) {
+  function addToCart(product, variantIdx, sizeIdx) {
     const variant = (product.variants && product.variants[variantIdx]) || {
-      label: 'Tiêu chuẩn',
-      image: product.image,
-      price: product.price
+      label: 'Mẫu tiêu chuẩn',
+      image: product.image
     };
-    const key = `${product.id}__${variant.label}`;
+    const sizes =
+      product.sizes && product.sizes.length > 0
+        ? product.sizes
+        : [{ label: 'Tiêu chuẩn', price: product.price }];
+    const sizeObj = sizes[sizeIdx] || sizes[0];
+    const itemPrice = Number(sizeObj.price) || Number(product.price) || 0;
+    const labelCombo = `${variant.label} • ${sizeObj.label}`;
+    const key = `${product.id}__${variant.label}__${sizeObj.label}`;
     const existing = cart.find((i) => i.key === key);
     if (existing) {
       existing.qty += 1;
@@ -489,8 +586,8 @@
         key,
         productId: product.id,
         name: product.name,
-        size: variant.label,
-        price: variant.price,
+        size: labelCombo,
+        price: itemPrice,
         image: variant.image || product.image,
         qty: 1
       });
@@ -503,7 +600,7 @@
       content_ids: [product.id],
       content_name: product.name,
       content_type: 'product',
-      value: Number(variant.price) || 0,
+      value: itemPrice,
       currency: 'VND'
     });
   }
@@ -559,15 +656,24 @@
     const variants =
       product.variants && product.variants.length > 0
         ? product.variants
-        : [{ label: 'Tiêu chuẩn', image: product.image, price: product.price }];
+        : [{ label: 'Mẫu 1', image: product.image }];
+    const sizes =
+      product.sizes && product.sizes.length > 0
+        ? product.sizes
+        : [{ label: 'Tiêu chuẩn', price: product.price }];
     const variant = variants[selectedVariantIndex] || variants[0];
+    const selectedSize = selectedSizeIndex !== null ? sizes[selectedSizeIndex] : null;
+    const minPrice = Math.min(...sizes.map((s) => Number(s.price) || 0));
+    const maxPrice = Math.max(...sizes.map((s) => Number(s.price) || 0));
+    const priceRangeText =
+      minPrice === maxPrice ? formatVND(minPrice) : `${formatVND(minPrice)} - ${formatVND(maxPrice)}`;
     const related = products.filter((p) => p.id !== product.id).slice(0, 4);
 
     trackPixelEvent('ViewContent', {
       content_ids: [product.id],
       content_name: product.name,
       content_type: 'product',
-      value: Number(variant.price) || 0,
+      value: selectedSize ? Number(selectedSize.price) : minPrice,
       currency: 'VND'
     });
 
@@ -589,7 +695,10 @@
 
         <div class="detail-info">
           <h2 class="detail-title">${escapeHTML(product.name)}</h2>
-          <p class="detail-price" id="detail-price">${formatVND(variant.price)}</p>
+          <p class="detail-price" id="detail-price">${selectedSize ? formatVND(selectedSize.price) : priceRangeText}</p>
+          <p class="detail-price-hint ${selectedSize ? 'hidden' : ''}" id="detail-price-hint">
+            Chọn mẫu và kích thước bên dưới để xem giá chính xác
+          </p>
 
           <div class="detail-variant-header">
             <span>Mẫu mã</span>
@@ -598,8 +707,8 @@
             </svg>
           </div>
           <p class="detail-variant-subtitle">
-            Cỡ: ${variants.length} lựa chọn
-            <span class="detail-size-label" id="detail-size-label">(${escapeHTML(variant.label)})</span>
+            Mẫu: ${variants.length} lựa chọn
+            <span class="detail-size-label" id="detail-variant-label">(${escapeHTML(variant.label)})</span>
           </p>
 
           <div class="detail-swatches" id="detail-swatches">
@@ -619,12 +728,33 @@
               .join('')}
           </div>
 
+          <p class="detail-variant-subtitle">
+            Kích thước (Size): ${sizes.length} lựa chọn
+            <span class="detail-size-label" id="detail-size-label">${selectedSize ? `(${escapeHTML(selectedSize.label)})` : '(Chưa chọn)'}</span>
+          </p>
+
+          <div class="detail-sizes" id="detail-sizes">
+            ${sizes
+              .map(
+                (s, idx) => `
+              <button
+                type="button"
+                class="size-btn ${idx === selectedSizeIndex ? 'active' : ''}"
+                data-size-idx="${idx}"
+              >
+                ${escapeHTML(s.label)}
+              </button>
+            `
+              )
+              .join('')}
+          </div>
+
           <div class="detail-chips-row">
             <button type="button" class="question-chip detail-q-chip" data-question="Tôi muốn hỏi thêm về ${escapeHTML(product.name)}">
               <img class="shop-avatar shop-avatar-xs" src="${escapeHTML(shopConfig.avatar)}" alt="${escapeHTML(shopConfig.name)}" />
               <span>Đặt câu hỏi</span>
             </button>
-            <button type="button" class="question-chip detail-q-chip" data-question="Tôi quan tâm mẫu ${escapeHTML(product.name)} cỡ ${escapeHTML(variant.label)}">
+            <button type="button" class="question-chip detail-q-chip" data-question="Tôi quan tâm ${escapeHTML(product.name)} (${escapeHTML(variant.label)})">
               <span>Quan tâm!</span>
             </button>
             <button type="button" class="question-chip detail-q-chip" data-question="Mặt hàng ${escapeHTML(product.name)} này còn sẵn không ạ?">
@@ -697,24 +827,46 @@
         selectedVariantIndex = Number(btn.dataset.variantIdx);
         const v = variants[selectedVariantIndex];
         document.getElementById('detail-main-img').src = v.image || product.image;
-        document.getElementById('detail-price').textContent = formatVND(v.price);
-        document.getElementById('detail-size-label').textContent = `(${v.label})`;
+        document.getElementById('detail-variant-label').textContent = `(${v.label})`;
         document.querySelectorAll('#detail-swatches .swatch-btn').forEach((b) => b.classList.remove('active'));
         btn.classList.add('active');
       });
     });
 
+    document.querySelectorAll('#detail-sizes .size-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        selectedSizeIndex = Number(btn.dataset.sizeIdx);
+        const s = sizes[selectedSizeIndex];
+        document.getElementById('detail-price').textContent = formatVND(s.price);
+        document.getElementById('detail-price-hint').classList.add('hidden');
+        document.getElementById('detail-size-label').textContent = `(${s.label})`;
+        document.querySelectorAll('#detail-sizes .size-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
     document.getElementById('btn-detail-add-cart').addEventListener('click', () => {
-      addToCart(product, selectedVariantIndex);
+      if (selectedSizeIndex === null) {
+        showToast('Vui lòng chọn kích thước sản phẩm');
+        document.getElementById('detail-sizes').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      addToCart(product, selectedVariantIndex, selectedSizeIndex);
     });
 
     document.getElementById('btn-detail-buy-now').addEventListener('click', () => {
+      if (selectedSizeIndex === null) {
+        showToast('Vui lòng chọn kích thước sản phẩm');
+        document.getElementById('detail-sizes').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
       const v = variants[selectedVariantIndex] || variants[0];
+      const s = sizes[selectedSizeIndex] || sizes[0];
       openCheckout('buy-now', {
         productId: product.id,
         name: product.name,
-        size: v.label,
-        price: v.price,
+        size: `${v.label} • ${s.label}`,
+        price: s.price,
         qty: 1
       });
     });
@@ -851,6 +1003,17 @@
     });
   }
 
+  function slugifyCategory(str) {
+    const base = String(str || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/đ/gi, 'd')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '');
+    return base || 'danh-muc';
+  }
+
   function renderAdmin() {
     if (!isAdminAuthenticated()) {
       renderAdminLogin();
@@ -896,6 +1059,34 @@
             </div>
             <button type="button" class="btn-primary-blue admin-btn-sm" id="btn-admin-save-shop">Lưu thông tin Shop</button>
           </div>
+        </div>
+      </div>
+
+      <!-- Category Management -->
+      <div class="admin-card">
+        <div class="admin-card-title">
+          <span>Quản lý danh mục (${categories.length})</span>
+        </div>
+        <form id="admin-add-category-form" style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
+          <input type="text" id="admin-new-cat-name" required placeholder="Tên danh mục mới (vd: Thảm phòng ngủ)" style="flex:1;min-width:200px;padding:9px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;" />
+          <button type="submit" class="btn-primary-blue admin-btn-sm">+ Thêm danh mục</button>
+        </form>
+        <div class="admin-variant-list" id="admin-category-list">
+          ${categories
+            .map((cat) => {
+              const count = products.filter((p) => p.category === cat.id).length;
+              return `
+                <div class="admin-variant-row" data-cat-id="${escapeHTML(cat.id)}" style="grid-template-columns:1fr auto auto;">
+                  <input type="text" class="cat-name-input" value="${escapeHTML(cat.name)}" style="padding:8px 10px;border:1px solid #d1d5db;border-radius:6px;font-size:14px;" />
+                  <span style="font-size:12.5px;color:var(--text-secondary);white-space:nowrap;">${count} SP</span>
+                  <div style="display:flex;gap:6px;">
+                    <button type="button" class="btn-secondary admin-btn-sm btn-save-cat" style="height:34px;">Lưu</button>
+                    <button type="button" class="btn-danger-soft admin-btn-sm btn-delete-cat" style="height:34px;">Xóa</button>
+                  </div>
+                </div>
+              `;
+            })
+            .join('')}
         </div>
       </div>
 
@@ -988,10 +1179,10 @@
       const file = e.target.files[0];
       if (!file) return;
       try {
-        pendingAvatar = await readFileAsCompressedDataURL(file, 400);
+        pendingAvatar = await uploadImageFile(file, 400);
         avatarPreview.src = pendingAvatar;
-        avatarUrlInput.value = '';
-        showToast('Đã chọn ảnh mới, bấm "Lưu thông tin Shop" để áp dụng');
+        avatarUrlInput.value = pendingAvatar.startsWith('data:') ? '' : pendingAvatar;
+        showToast('Đã tải ảnh lên, bấm "Lưu thông tin Shop" để áp dụng');
       } catch {
         showToast('Không thể đọc tệp ảnh này');
       }
@@ -1024,17 +1215,82 @@
       showToast('Đã lưu thông tin & ảnh đại diện Shop');
     });
 
-    document.getElementById('btn-admin-reset-all').addEventListener('click', () => {
-      if (!window.confirm('Khôi phục toàn bộ sản phẩm và thông tin Shop về mặc định?')) return;
+    document.getElementById('btn-admin-reset-all').addEventListener('click', async () => {
+      if (!window.confirm('Khôi phục toàn bộ sản phẩm, danh mục và thông tin Shop về mặc định?')) return;
       localStorage.removeItem(STORAGE_KEYS.shop);
+      localStorage.removeItem(STORAGE_KEYS.categories);
       localStorage.removeItem(STORAGE_KEYS.products);
       shopConfig = loadShopConfig();
+      categories = loadCategories();
       products = loadProducts();
       editingProductId = null;
-      syncToServer();
+      await syncToServer();
       syncShopBranding();
       renderAdmin();
       showToast('Đã khôi phục dữ liệu mặc định');
+    });
+
+    document.getElementById('admin-add-category-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const input = document.getElementById('admin-new-cat-name');
+      const name = input.value.trim();
+      if (!name) return;
+      let id = slugifyCategory(name);
+      if (categories.some((c) => c.id === id)) {
+        id = `${id}-${Date.now().toString().slice(-4)}`;
+      }
+      categories.push({ id, name });
+      await saveCategories();
+      renderAdmin();
+      showToast('Đã thêm danh mục mới');
+    });
+
+    document.querySelectorAll('#admin-category-list .btn-save-cat').forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        const row = e.target.closest('[data-cat-id]');
+        const id = row.dataset.catId;
+        const newName = row.querySelector('.cat-name-input').value.trim();
+        if (!newName) {
+          showToast('Tên danh mục không được để trống');
+          return;
+        }
+        const target = categories.find((c) => c.id === id);
+        if (target) {
+          target.name = newName;
+          await saveCategories();
+          if (editingProductId !== null) renderProductEditorForm();
+          showToast('Đã cập nhật tên danh mục');
+        }
+      });
+    });
+
+    document.querySelectorAll('#admin-category-list .btn-delete-cat').forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        if (categories.length <= 1) {
+          showToast('Cần giữ lại ít nhất 1 danh mục');
+          return;
+        }
+        const row = e.target.closest('[data-cat-id]');
+        const id = row.dataset.catId;
+        const target = categories.find((c) => c.id === id);
+        if (!target) return;
+        const usedCount = products.filter((p) => p.category === id).length;
+        const msg =
+          usedCount > 0
+            ? `Danh mục "${target.name}" đang có ${usedCount} sản phẩm. Xóa danh mục sẽ chuyển các sản phẩm này sang danh mục đầu tiên. Tiếp tục?`
+            : `Xóa danh mục "${target.name}"?`;
+        if (!window.confirm(msg)) return;
+
+        categories = categories.filter((c) => c.id !== id);
+        const fallbackId = categories[0].id;
+        products.forEach((p) => {
+          if (p.category === id) p.category = fallbackId;
+        });
+        await saveCategories();
+        await saveProducts();
+        renderAdmin();
+        showToast('Đã xóa danh mục');
+      });
     });
 
     document.getElementById('btn-admin-add-product').addEventListener('click', () => {
@@ -1113,14 +1369,23 @@
     if (productId === null) {
       editingProductId = '__NEW__';
       editingVariants = [
-        { label: 'Mẫu 1', image: DEFAULT_PRODUCT_IMAGE, price: 4590000 },
-        { label: 'Mẫu 2', image: DEFAULT_PRODUCT_IMAGE, price: 4590000 }
+        { label: 'Mẫu 1', image: DEFAULT_PRODUCT_IMAGE },
+        { label: 'Mẫu 2', image: DEFAULT_PRODUCT_IMAGE }
+      ];
+      editingSizes = [
+        { label: '160 x 230 cm', price: 4590000 },
+        { label: '200 x 300 cm', price: 5990000 }
       ];
     } else {
       const p = products.find((item) => item.id === productId);
       if (!p) return;
       editingProductId = p.id;
       editingVariants = JSON.parse(JSON.stringify(p.variants || []));
+      editingSizes = JSON.parse(
+        JSON.stringify(
+          p.sizes && p.sizes.length > 0 ? p.sizes : [{ label: 'Tiêu chuẩn', price: p.price }]
+        )
+      );
     }
     renderProductEditorForm();
     const card = document.getElementById('admin-editor-card');
@@ -1137,7 +1402,7 @@
     const pData = existing || {
       name: '',
       price: 4590000,
-      category: 'turkish',
+      category: categories[0] ? categories[0].id : 'lua-tao-cat',
       image: DEFAULT_PRODUCT_IMAGE,
       material: 'Chất liệu cao cấp, bề mặt mềm mịn',
       origin: 'Nhập khẩu cao cấp',
@@ -1164,9 +1429,13 @@
           <div class="form-group">
             <label>Danh mục</label>
             <select id="ed-category" style="width:100%;padding:10px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;">
-              <option value="turkish" ${pData.category === 'turkish' ? 'selected' : ''}>Dệt Thổ Nhĩ Kỳ</option>
-              <option value="round" ${pData.category === 'round' ? 'selected' : ''}>Thảm tròn</option>
-              <option value="luxury" ${pData.category === 'luxury' ? 'selected' : ''}>Luxury</option>
+              ${categories
+                .map(
+                  (cat) => `
+                <option value="${escapeHTML(cat.id)}" ${pData.category === cat.id ? 'selected' : ''}>${escapeHTML(cat.name)}</option>
+              `
+                )
+                .join('')}
             </select>
           </div>
           <div class="form-group admin-form-full">
@@ -1212,8 +1481,8 @@
 
         <div style="margin-top:12px;">
           <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-            <strong style="font-size:14px;">Các lựa chọn Cỡ / Mẫu mã (${editingVariants.length})</strong>
-            <button type="button" class="btn-secondary admin-btn-sm" id="btn-add-variant">+ Thêm cỡ</button>
+            <strong style="font-size:14px;">Các lựa chọn Mẫu mã (${editingVariants.length})</strong>
+            <button type="button" class="btn-secondary admin-btn-sm" id="btn-add-variant">+ Thêm mẫu</button>
           </div>
           <div class="admin-variant-list" id="admin-variant-list">
             ${editingVariants
@@ -1221,16 +1490,35 @@
                 (v, idx) => `
               <div class="admin-variant-row" data-v-idx="${idx}">
                 <img class="admin-variant-thumb" src="${escapeHTML(v.image || pData.image)}" alt="" />
-                <input type="text" class="v-label" value="${escapeHTML(v.label)}" placeholder="Cỡ (vd: 160 x 230 cm)" style="padding:8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;" />
-                <input type="number" class="v-price" value="${Number(v.price)}" min="0" step="1000" placeholder="Giá" style="padding:8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;" />
-                <div style="display:flex;gap:6px;align-items:center;">
-                  <input type="text" class="v-image" value="${escapeHTML(v.image)}" placeholder="Link ảnh cỡ" style="flex:1;padding:8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;" />
+                <input type="text" class="v-label" value="${escapeHTML(v.label)}" placeholder="Tên mẫu (vd: Mẫu 1)" style="padding:8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;" />
+                <div style="display:flex;gap:6px;align-items:center;grid-column:span 2;">
+                  <input type="text" class="v-image" value="${escapeHTML(v.image)}" placeholder="Link ảnh mẫu" style="flex:1;padding:8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;" />
                   <label class="btn-secondary admin-btn-sm" style="cursor:pointer;height:32px;padding:0 8px;">
                     Ảnh
                     <input type="file" class="v-image-file hidden" accept="image/*" />
                   </label>
                 </div>
                 <button type="button" class="btn-danger-soft admin-btn-sm btn-remove-variant" style="height:32px;padding:0 10px;">Xóa</button>
+              </div>
+            `
+              )
+              .join('')}
+          </div>
+        </div>
+
+        <div style="margin-top:16px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+            <strong style="font-size:14px;">Các lựa chọn Kích thước &amp; Giá (${editingSizes.length})</strong>
+            <button type="button" class="btn-secondary admin-btn-sm" id="btn-add-size">+ Thêm size</button>
+          </div>
+          <div class="admin-variant-list" id="admin-size-list">
+            ${editingSizes
+              .map(
+                (s, idx) => `
+              <div class="admin-variant-row admin-size-row" data-s-idx="${idx}" style="grid-template-columns:1.3fr 1fr auto;">
+                <input type="text" class="s-label" value="${escapeHTML(s.label)}" placeholder="Size (vd: 160 x 230 cm)" style="padding:8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;" />
+                <input type="number" class="s-price" value="${Number(s.price)}" min="0" step="1000" placeholder="Giá (VNĐ)" style="padding:8px;border:1px solid #d1d5db;border-radius:6px;font-size:13px;" />
+                <button type="button" class="btn-danger-soft admin-btn-sm btn-remove-size" style="height:32px;padding:0 10px;">Xóa</button>
               </div>
             `
               )
@@ -1255,9 +1543,14 @@
     document.getElementById('ed-image-file').addEventListener('change', async (e) => {
       const file = e.target.files[0];
       if (!file) return;
-      const dataUrl = await readFileAsCompressedDataURL(file, 720);
-      edImageInput.value = dataUrl;
-      edImgPreview.src = dataUrl;
+      try {
+        const uploadedPath = await uploadImageFile(file, 720);
+        edImageInput.value = uploadedPath;
+        edImgPreview.src = uploadedPath;
+        showToast('Đã tải ảnh sản phẩm lên');
+      } catch {
+        showToast('Không thể đọc tệp ảnh này');
+      }
     });
 
     card.querySelectorAll('[data-preset-img]').forEach((btn) => {
@@ -1268,20 +1561,32 @@
     });
 
     function syncVariantsFromDOM() {
-      const rows = card.querySelectorAll('.admin-variant-row');
+      const rows = card.querySelectorAll('.admin-variant-row:not(.admin-size-row)');
       editingVariants = Array.from(rows).map((row) => ({
-        label: row.querySelector('.v-label').value.trim() || 'Tiêu chuẩn',
-        price: Number(row.querySelector('.v-price').value) || 0,
+        label: row.querySelector('.v-label').value.trim() || 'Mẫu',
         image: row.querySelector('.v-image').value.trim() || edImageInput.value.trim()
+      }));
+      const sRows = card.querySelectorAll('.admin-size-row');
+      editingSizes = Array.from(sRows).map((row) => ({
+        label: row.querySelector('.s-label').value.trim() || 'Tiêu chuẩn',
+        price: Number(row.querySelector('.s-price').value) || 0
       }));
     }
 
     document.getElementById('btn-add-variant').addEventListener('click', () => {
       syncVariantsFromDOM();
       editingVariants.push({
-        label: 'Mẫu mới',
-        price: Number(document.getElementById('ed-price').value) || 4590000,
+        label: `Mẫu ${editingVariants.length + 1}`,
         image: edImageInput.value.trim() || DEFAULT_PRODUCT_IMAGE
+      });
+      renderProductEditorForm();
+    });
+
+    document.getElementById('btn-add-size').addEventListener('click', () => {
+      syncVariantsFromDOM();
+      editingSizes.push({
+        label: 'Kích thước mới',
+        price: Number(document.getElementById('ed-price').value) || 4590000
       });
       renderProductEditorForm();
     });
@@ -1295,14 +1600,28 @@
       });
     });
 
+    card.querySelectorAll('.btn-remove-size').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        syncVariantsFromDOM();
+        const idx = Number(e.target.closest('.admin-size-row').dataset.sIdx);
+        editingSizes.splice(idx, 1);
+        renderProductEditorForm();
+      });
+    });
+
     card.querySelectorAll('.v-image-file').forEach((input) => {
       input.addEventListener('change', async (e) => {
         const file = e.target.files[0];
         if (!file) return;
         const row = e.target.closest('.admin-variant-row');
-        const dataUrl = await readFileAsCompressedDataURL(file, 600);
-        row.querySelector('.v-image').value = dataUrl;
-        row.querySelector('.admin-variant-thumb').src = dataUrl;
+        try {
+          const uploadedPath = await uploadImageFile(file, 600);
+          row.querySelector('.v-image').value = uploadedPath;
+          row.querySelector('.admin-variant-thumb').src = uploadedPath;
+          showToast('Đã tải ảnh mẫu lên');
+        } catch {
+          showToast('Không thể đọc tệp ảnh này');
+        }
       });
     });
 
@@ -1313,7 +1632,7 @@
     document.getElementById('btn-editor-cancel').addEventListener('click', closeEditor);
     document.getElementById('btn-editor-cancel-2').addEventListener('click', closeEditor);
 
-    document.getElementById('admin-product-form').addEventListener('submit', (e) => {
+    document.getElementById('admin-product-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       syncVariantsFromDOM();
 
@@ -1328,7 +1647,8 @@
         thickness: document.getElementById('ed-thickness').value.trim(),
         warranty: document.getElementById('ed-warranty').value.trim(),
         description: document.getElementById('ed-description').value.trim(),
-        variants: editingVariants
+        variants: editingVariants,
+        sizes: editingSizes
       };
 
       if (isNew) {
@@ -1338,7 +1658,7 @@
         if (idx !== -1) products[idx] = payload;
       }
 
-      saveProducts();
+      await saveProducts();
       editingProductId = null;
       renderAdmin();
       showToast(isNew ? 'Đã thêm sản phẩm mới' : 'Đã cập nhật sản phẩm');
@@ -1362,6 +1682,7 @@
 
     if (productId) {
       selectedVariantIndex = 0;
+      selectedSizeIndex = null;
       if (viewAdmin) viewAdmin.classList.add('hidden');
       viewStorefront.classList.add('hidden');
       viewDetail.classList.remove('hidden');
@@ -1420,6 +1741,29 @@
   // =========================================
   // Category Filters & Search
   // =========================================
+  function renderCategoriesUI() {
+    const desktopNav = document.querySelector('.desktop-nav');
+    const categoryPills = document.getElementById('category-pills');
+    if (desktopNav) {
+      desktopNav.innerHTML = [
+        `<button type="button" class="nav-link ${currentCategory === 'all' ? 'active' : ''}" data-category="all">Tất cả sản phẩm</button>`,
+        ...categories.map(
+          (c) =>
+            `<button type="button" class="nav-link ${currentCategory === c.id ? 'active' : ''}" data-category="${escapeHTML(c.id)}">${escapeHTML(c.name)}</button>`
+        )
+      ].join('');
+    }
+    if (categoryPills) {
+      categoryPills.innerHTML = [
+        `<button type="button" class="filter-pill ${currentCategory === 'all' ? 'active' : ''}" data-category="all">Tất cả</button>`,
+        ...categories.map(
+          (c) =>
+            `<button type="button" class="filter-pill ${currentCategory === c.id ? 'active' : ''}" data-category="${escapeHTML(c.id)}">${escapeHTML(c.name)}</button>`
+        )
+      ].join('');
+    }
+  }
+
   function setCategory(cat) {
     currentCategory = cat;
     document.querySelectorAll('.filter-pill, .nav-link').forEach((el) => {
@@ -1451,8 +1795,11 @@
   }
 
   if (!IS_ADMIN_PAGE) {
-    document.querySelectorAll('.filter-pill, .nav-link').forEach((btn) => {
-      btn.addEventListener('click', () => setCategory(btn.dataset.category));
+    document.addEventListener('click', (e) => {
+      const catBtn = e.target.closest('.filter-pill, .nav-link');
+      if (catBtn && catBtn.dataset.category) {
+        setCategory(catBtn.dataset.category);
+      }
     });
 
     document.getElementById('btn-mobile-search').addEventListener('click', () => {
@@ -1751,6 +2098,7 @@
     } else {
       initMetaPixel();
       syncShopBranding();
+      renderCategoriesUI();
       updateCartBadges();
       syncRoute();
     }

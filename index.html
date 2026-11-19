@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -9,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <!-- Mobile Storefront Top Bar -->
   <header class="mobile-header" id="mobile-header">
@@ -17,13 +19,15 @@
       <h1 class="mobile-header-title">Tất cả sản phẩm</h1>
       <div class="mobile-header-actions">
         <button class="icon-btn" id="btn-mobile-search" type="button" aria-label="Tìm kiếm">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
         </button>
         <button class="icon-btn cart-btn" id="btn-mobile-cart" type="button" aria-label="Giỏ hàng">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"></circle>
             <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -36,21 +40,24 @@
     <!-- Mobile Detail Top Bar (hidden on storefront) -->
     <div class="mobile-header-inner hidden" id="mobile-header-detail">
       <button class="icon-btn" id="btn-mobile-back" type="button" aria-label="Quay lại">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+          stroke-linecap="round" stroke-linejoin="round">
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
       <h1 class="mobile-header-title">Chi tiết sản phẩm</h1>
       <div class="mobile-header-actions">
         <button class="icon-btn" id="btn-mobile-share" type="button" aria-label="Chia sẻ">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
             <polyline points="16 6 12 2 8 6"></polyline>
             <line x1="12" y1="2" x2="12" y2="15"></line>
           </svg>
         </button>
         <button class="icon-btn cart-btn" id="btn-mobile-detail-cart" type="button" aria-label="Giỏ hàng">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"></circle>
             <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -77,14 +84,16 @@
   <header class="desktop-header">
     <div class="desktop-header-inner">
       <a href="index.html" class="desktop-brand" id="desktop-brand-link">
-        <img class="shop-avatar shop-avatar-sm" data-shop-avatar src="assets/shop-avatar.jpg" alt="Thảm Trải Sàn Cao Cấp Bảo Long" />
+        <img class="shop-avatar shop-avatar-sm" data-shop-avatar src="assets/shop-avatar.jpg"
+          alt="Thảm Trải Sàn Cao Cấp Bảo Long" />
         <span class="desktop-brand-name" data-shop-name>Thảm Trải Sàn Cao Cấp Bảo Long</span>
       </a>
       <nav class="desktop-nav">
         <button type="button" class="nav-link active" data-category="all">Tất cả sản phẩm</button>
-        <button type="button" class="nav-link" data-category="turkish">Thảm dệt Thổ Nhĩ Kỳ</button>
-        <button type="button" class="nav-link" data-category="round">Thảm tròn</button>
-        <button type="button" class="nav-link" data-category="luxury">Bộ sưu tập Luxury</button>
+        <button type="button" class="nav-link" data-category="lua-tao-cat">Thảm lụa tảo cát</button>
+        <button type="button" class="nav-link" data-category="tham-tron">Thảm tròn</button>
+        <button type="button" class="nav-link" data-category="tham-nhung">Thảm tuyết nhung</button>
+        <button type="button" class="nav-link" data-category="tham-cua">Thảm cửa &amp; Chùi chân</button>
       </nav>
       <div class="desktop-actions">
         <div class="desktop-search-wrap">
@@ -95,7 +104,8 @@
           <input type="search" id="desktop-search-input" placeholder="Tìm kiếm sản phẩm..." />
         </div>
         <button class="desktop-cart-btn" id="btn-desktop-cart" type="button">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="9" cy="21" r="1"></circle>
             <circle cx="20" cy="21" r="1"></circle>
             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
@@ -114,7 +124,8 @@
       <!-- Store Profile Banner -->
       <div class="store-profile">
         <div class="store-profile-main">
-          <img class="shop-avatar shop-avatar-lg" data-shop-avatar src="assets/shop-avatar.jpg" alt="Thảm Trải Sàn Cao Cấp Bảo Long" />
+          <img class="shop-avatar shop-avatar-lg" data-shop-avatar src="assets/shop-avatar.jpg"
+            alt="Thảm Trải Sàn Cao Cấp Bảo Long" />
           <div class="store-profile-info">
             <h2 class="store-name" data-shop-name>Thảm Trải Sàn Cao Cấp Bảo Long</h2>
             <p class="store-tagline desktop-only">Thảm trải sàn dệt cao cấp — Tinh tế cho mọi không gian sống</p>
@@ -133,9 +144,10 @@
         <h3 class="section-heading">Tất cả sản phẩm</h3>
         <div class="filter-pills" id="category-pills">
           <button type="button" class="filter-pill active" data-category="all">Tất cả</button>
-          <button type="button" class="filter-pill" data-category="turkish">Dệt Thổ Nhĩ Kỳ</button>
-          <button type="button" class="filter-pill" data-category="round">Thảm tròn</button>
-          <button type="button" class="filter-pill" data-category="luxury">Luxury</button>
+          <button type="button" class="filter-pill" data-category="lua-tao-cat">Thảm lụa tảo cát</button>
+          <button type="button" class="filter-pill" data-category="tham-tron">Thảm tròn</button>
+          <button type="button" class="filter-pill" data-category="tham-nhung">Thảm tuyết nhung</button>
+          <button type="button" class="filter-pill" data-category="tham-cua">Thảm cửa &amp; Chùi chân</button>
         </div>
       </div>
 
@@ -179,7 +191,8 @@
   <footer class="desktop-footer">
     <div class="desktop-footer-inner">
       <div class="footer-brand">
-        <img class="shop-avatar shop-avatar-sm" data-shop-avatar src="assets/shop-avatar.jpg" alt="Thảm Trải Sàn Cao Cấp Bảo Long" />
+        <img class="shop-avatar shop-avatar-sm" data-shop-avatar src="assets/shop-avatar.jpg"
+          alt="Thảm Trải Sàn Cao Cấp Bảo Long" />
         <div>
           <strong data-shop-name>Thảm Trải Sàn Cao Cấp Bảo Long</strong>
           <p>Thảm trải sàn &amp; Nội thất cao cấp</p>
@@ -246,7 +259,8 @@
   <div class="modal hidden" id="chat-modal" role="dialog" aria-modal="true">
     <div class="modal-header">
       <div class="chat-header-brand">
-        <img class="shop-avatar shop-avatar-xs" data-shop-avatar src="assets/shop-avatar.jpg" alt="Thảm Trải Sàn Cao Cấp Bảo Long" />
+        <img class="shop-avatar shop-avatar-xs" data-shop-avatar src="assets/shop-avatar.jpg"
+          alt="Thảm Trải Sàn Cao Cấp Bảo Long" />
         <div>
           <h3 data-shop-name>Thảm Trải Sàn Cao Cấp Bảo Long</h3>
           <span class="chat-status">Thường trả lời trong vài phút</span>
@@ -268,4 +282,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
