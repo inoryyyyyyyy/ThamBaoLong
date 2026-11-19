@@ -1,9 +1,7 @@
 (() => {
   'use strict';
 
-  const IMG_ROUND = 'assets/rug-round-cream.jpg';
-  const IMG_GEOMETRIC = 'assets/rug-geometric-cream.jpg';
-  const IMG_BOTANICAL = 'assets/rug-botanical-dark.jpg';
+  const DEFAULT_PRODUCT_IMAGE = 'assets/products/tham-lua-tao-cat-khang-nuoc/1.png';
   const DEFAULT_AVATAR = 'assets/shop-avatar.jpg';
   const DEFAULT_SHOP_NAME = 'Thảm Trải Sàn Cao Cấp Bảo Long';
   const IS_ADMIN_PAGE =
@@ -11,164 +9,149 @@
 
   const STORAGE_KEYS = {
     shop: 'baolong_shop_v1',
-    products: 'baolong_products_v1',
+    products: 'baolong_products_v2',
     cart: 'baolong_cart_v1',
     pixel: 'baolong_pixel_v1',
     adminAuth: 'baolong_admin_auth_v1',
     adminSession: 'baolong_admin_session_v1'
   };
 
+  const STANDARD_DETAIL_TEXT =
+    '✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n' +
+    '✔️ Màu trung tính, hợp mọi phong cách nội thất\n' +
+    '✔️ Nhiều kích thước cho phòng khách và phòng ngủ';
+
   const DEFAULT_PRODUCTS = [
     {
-      id: 'fes-tho-nhi-ky',
-      name: 'Thảm trải sàn Fes dệt Thổ Nhĩ Kỳ',
+      id: 'tham-lua-tao-cat-khang-nuoc',
+      name: 'Thảm lụa tảo cát kháng nước',
       price: 4590000,
       category: 'turkish',
-      image: IMG_GEOMETRIC,
-      material: 'Sợi dệt Thổ Nhĩ Kỳ cao cấp',
-      origin: 'Thổ Nhĩ Kỳ',
-      thickness: '12 mm',
-      warranty: '24 tháng',
-      description:
-        'Thảm dệt nổi họa tiết hình học tinh xảo, bề mặt êm ái, chống bám bụi và dễ dàng vệ sinh cho phòng khách hiện đại.',
-      variants: [
-        { label: '160 x 230 cm', image: IMG_GEOMETRIC, price: 4590000 },
-        { label: '200 x 300 cm', image: IMG_GEOMETRIC, price: 6290000 },
-        { label: '240 x 340 cm', image: IMG_ROUND, price: 8490000 },
-        { label: 'Đặt theo yêu cầu', image: IMG_BOTANICAL, price: 4590000 }
-      ]
-    },
-    {
-      id: 'tencha-luxury-penthouse',
-      name: 'Thảm lông cừu Penthouse Geometric',
-      price: 51690000,
-      category: 'luxury',
-      image: IMG_GEOMETRIC,
-      material: '100% Len lông cừu tự nhiên',
-      origin: 'Bỉ / Thổ Nhĩ Kỳ',
-      thickness: '16 mm',
-      warranty: '36 tháng',
-      description:
-        'Phiên bản thảm khổ lớn dành cho căn hộ Penthouse và biệt thự, giữ nhiệt tốt và tạo điểm nhấn sang trọng.',
-      variants: [
-        { label: '200 x 300 cm', image: IMG_GEOMETRIC, price: 51690000 },
-        { label: '240 x 340 cm', image: IMG_GEOMETRIC, price: 58900000 },
-        { label: '300 x 400 cm', image: IMG_BOTANICAL, price: 69500000 },
-        { label: 'Đặt theo yêu cầu', image: IMG_ROUND, price: 51690000 }
-      ]
-    },
-    {
-      id: 'athena-kem-tron',
-      name: 'Thảm dệt cao cấp Athena Kem',
-      price: 34990000,
-      category: 'round',
-      image: IMG_ROUND,
-      material: 'Sợi Cotton & Viscose dệt tay',
-      origin: 'Thổ Nhĩ Kỳ',
-      thickness: '14 mm',
-      warranty: '24 tháng',
-      description:
-        'Thiết kế bo tròn thanh lịch, tông màu kem ấm áp kết hợp hoàn hảo với sofa, bàn trà và ghế thư giãn.',
-      variants: [
-        { label: 'Đường kính 180 cm', image: IMG_ROUND, price: 34990000 },
-        { label: 'Đường kính 220 cm', image: IMG_ROUND, price: 39900000 },
-        { label: 'Đường kính 260 cm', image: IMG_GEOMETRIC, price: 44500000 },
-        { label: 'Đặt theo yêu cầu', image: IMG_BOTANICAL, price: 34990000 }
-      ]
-    },
-    {
-      id: 'chic-nau-tho-nhi-ky',
-      name: 'Thảm trải sàn Chic nâu dệt Thổ Nhĩ Kỳ',
-      price: 4590000,
-      category: 'turkish',
-      image: IMG_BOTANICAL,
-      material: 'Sợi Polypropylene & Viscose mật độ cao',
-      origin: 'Thổ Nhĩ Kỳ',
-      thickness: '11 mm',
-      warranty: '24 tháng',
-      description:
-        'Họa tiết lá nhiệt đới ánh vàng đồng trên nền tối sang trọng, chống trượt và bền màu vượt thời gian.',
-      variants: [
-        { label: '160 x 230 cm', image: IMG_BOTANICAL, price: 4590000 },
-        { label: '200 x 300 cm', image: IMG_BOTANICAL, price: 5990000 },
-        { label: '240 x 340 cm', image: IMG_GEOMETRIC, price: 7890000 },
-        { label: 'Đặt theo yêu cầu', image: IMG_ROUND, price: 4590000 }
-      ]
-    },
-    {
-      id: 'botanical-luxury-den-vang',
-      name: 'Thảm Luxury Botanical Đen Vàng',
-      price: 23190000,
-      category: 'luxury',
-      image: IMG_BOTANICAL,
-      material: 'Sợi tơ Bamboo & Len dệt nổi',
-      origin: 'Thổ Nhĩ Kỳ',
-      thickness: '15 mm',
-      warranty: '36 tháng',
-      description:
-        'Tác phẩm nghệ thuật dưới chân bạn với họa tiết thực vật ánh kim nổi bật trên nền đen huyền bí.',
-      variants: [
-        { label: '200 x 300 cm', image: IMG_BOTANICAL, price: 23190000 },
-        { label: '240 x 340 cm', image: IMG_BOTANICAL, price: 28900000 },
-        { label: '300 x 400 cm', image: IMG_GEOMETRIC, price: 36500000 },
-        { label: 'Đặt theo yêu cầu', image: IMG_ROUND, price: 23190000 }
-      ]
-    },
-    {
-      id: 'nordic-round-woven',
-      name: 'Thảm tròn dệt thủ công Nordic',
-      price: 4590000,
-      category: 'round',
-      image: IMG_ROUND,
-      material: 'Sợi dệt tự nhiên thân thiện môi trường',
-      origin: 'Thổ Nhĩ Kỳ',
+      image: 'assets/products/tham-lua-tao-cat-khang-nuoc/1.png',
+      material: 'Lụa tảo cát kháng nước cao cấp',
+      origin: 'Nhập khẩu cao cấp',
       thickness: '10 mm',
       warranty: '24 tháng',
-      description:
-        'Đường viền dệt chắc chắn, phong cách Bắc Âu tối giản giúp không gian đọc sách và phòng ngủ thêm ấm cúng.',
+      description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: 'Đường kính 160 cm', image: IMG_ROUND, price: 4590000 },
-        { label: 'Đường kính 200 cm', image: IMG_ROUND, price: 5890000 },
-        { label: 'Đường kính 240 cm', image: IMG_GEOMETRIC, price: 7490000 },
-        { label: 'Đặt theo yêu cầu', image: IMG_BOTANICAL, price: 4590000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/1.png', price: 4590000 },
+        { label: 'Mẫu 2', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/2.png', price: 4590000 },
+        { label: 'Mẫu 3', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/3.png', price: 4590000 },
+        { label: 'Mẫu 4', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/4.png', price: 4590000 },
+        { label: 'Mẫu 5', image: 'assets/products/tham-lua-tao-cat-khang-nuoc/5.png', price: 4590000 }
       ]
     },
     {
-      id: 'minimalist-cream-living',
-      name: 'Thảm phòng khách Minimalist Kem',
+      id: 'tham-lua-tao-cat-khang-nuoc-2mx3m',
+      name: 'Thảm lụa tảo cát kháng nước size 2mx3m',
+      price: 5990000,
+      category: 'luxury',
+      image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/1.png',
+      material: 'Lụa tảo cát kháng nước khổ lớn',
+      origin: 'Nhập khẩu cao cấp',
+      thickness: '10 mm',
+      warranty: '24 tháng',
+      description: STANDARD_DETAIL_TEXT,
+      variants: [
+        { label: 'Mẫu 1 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/1.png', price: 5990000 },
+        { label: 'Mẫu 2 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/2.png', price: 5990000 },
+        { label: 'Mẫu 3 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/3.png', price: 5990000 },
+        { label: 'Mẫu 4 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/4.png', price: 5990000 },
+        { label: 'Mẫu 5 (2m x 3m)', image: 'assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/5.png', price: 5990000 }
+      ]
+    },
+    {
+      id: 'tham-tron-det-cao-cap',
+      name: 'Thảm tròn dệt cao cấp',
       price: 4590000,
-      category: 'turkish',
-      image: IMG_GEOMETRIC,
-      material: 'Sợi Microfiber mềm mịn',
-      origin: 'Thổ Nhĩ Kỳ',
+      category: 'round',
+      image: 'assets/products/tham-tron-det-cao-cap/1.png',
+      material: 'Sợi dệt cao cấp chống bám bụi',
+      origin: 'Nhập khẩu cao cấp',
       thickness: '12 mm',
       warranty: '24 tháng',
-      description:
-        'Gam màu kem trung tính dễ phối với mọi kiểu nội thất từ Japandi, Minimalist đến Modern Luxury.',
+      description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: '160 x 230 cm', image: IMG_GEOMETRIC, price: 4590000 },
-        { label: '200 x 300 cm', image: IMG_GEOMETRIC, price: 6190000 },
-        { label: '240 x 340 cm', image: IMG_ROUND, price: 8190000 },
-        { label: 'Đặt theo yêu cầu', image: IMG_BOTANICAL, price: 4590000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-tron-det-cao-cap/1.png', price: 4590000 },
+        { label: 'Mẫu 2', image: 'assets/products/tham-tron-det-cao-cap/2.png', price: 4590000 },
+        { label: 'Mẫu 3', image: 'assets/products/tham-tron-det-cao-cap/3.png', price: 4590000 },
+        { label: 'Mẫu 4', image: 'assets/products/tham-tron-det-cao-cap/4.png', price: 4590000 },
+        { label: 'Mẫu 5', image: 'assets/products/tham-tron-det-cao-cap/5.png', price: 4590000 },
+        { label: 'Mẫu 6', image: 'assets/products/tham-tron-det-cao-cap/6.png', price: 4590000 }
       ]
     },
     {
-      id: 'solis-botanical-grand',
-      name: 'Thảm tròn đan sợi tự nhiên Solis',
-      price: 23190000,
+      id: 'tham-tron-long-cuu-de-det-1m6',
+      name: 'Thảm tròn lông cừu đế dệt size 1m6',
+      price: 3890000,
       category: 'round',
-      image: IMG_ROUND,
-      material: 'Len dệt mật độ cao',
-      origin: 'Thổ Nhĩ Kỳ',
+      image: 'assets/products/tham-tron-long-cuu-de-det-1m6/1.jpg',
+      material: 'Lông cừu mềm mịn, đế dệt chống trượt',
+      origin: 'Nhập khẩu cao cấp',
+      thickness: '15 mm',
+      warranty: '24 tháng',
+      description: STANDARD_DETAIL_TEXT,
+      variants: [
+        { label: 'Mẫu 1 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/1.jpg', price: 3890000 },
+        { label: 'Mẫu 2 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/2.png', price: 3890000 },
+        { label: 'Mẫu 3 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/3.png', price: 3890000 },
+        { label: 'Mẫu 4 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/4.png', price: 3890000 },
+        { label: 'Mẫu 5 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/5.png', price: 3890000 },
+        { label: 'Mẫu 6 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/6.png', price: 3890000 },
+        { label: 'Mẫu 7 (1m6)', image: 'assets/products/tham-tron-long-cuu-de-det-1m6/7.jpg', price: 3890000 }
+      ]
+    },
+    {
+      id: 'tham-tuyet-nhung-cao-cap',
+      name: 'Thảm tuyết nhung cao cấp',
+      price: 4590000,
+      category: 'luxury',
+      image: 'assets/products/tham-tuyet-nhung-cao-cap/1.jpg',
+      material: 'Tuyết nhung siêu mịn cao cấp',
+      origin: 'Nhập khẩu cao cấp',
       thickness: '14 mm',
       warranty: '24 tháng',
-      description:
-        'Bề mặt đan nổi dày dặn, cách âm tốt và mang lại cảm giác êm ái tối đa khi di chuyển chân trần.',
+      description: STANDARD_DETAIL_TEXT,
       variants: [
-        { label: 'Đường kính 180 cm', image: IMG_ROUND, price: 23190000 },
-        { label: 'Đường kính 220 cm', image: IMG_ROUND, price: 27900000 },
-        { label: 'Đường kính 260 cm', image: IMG_BOTANICAL, price: 33500000 },
-        { label: 'Đặt theo yêu cầu', image: IMG_GEOMETRIC, price: 23190000 }
+        { label: 'Mẫu 1', image: 'assets/products/tham-tuyet-nhung-cao-cap/1.jpg', price: 4590000 },
+        { label: 'Mẫu 2', image: 'assets/products/tham-tuyet-nhung-cao-cap/2.jpg', price: 4590000 },
+        { label: 'Mẫu 3', image: 'assets/products/tham-tuyet-nhung-cao-cap/3.jpg', price: 4590000 },
+        { label: 'Mẫu 4', image: 'assets/products/tham-tuyet-nhung-cao-cap/4.jpg', price: 4590000 },
+        { label: 'Mẫu 5', image: 'assets/products/tham-tuyet-nhung-cao-cap/5.jpg', price: 4590000 }
+      ]
+    },
+    {
+      id: 'tham-luoi-chui-chan-50x80cm',
+      name: 'Thảm lưới chùi chân 50x80cm',
+      price: 490000,
+      category: 'turkish',
+      image: 'assets/products/tham-luoi-chui-chan-50x80cm/1.png',
+      material: 'Sợi lưới cao cấp thấm hút, chống trượt',
+      origin: 'Nhập khẩu cao cấp',
+      thickness: '8 mm',
+      warranty: '12 tháng',
+      description: STANDARD_DETAIL_TEXT,
+      variants: [
+        { label: 'Mẫu 1 (50x80cm)', image: 'assets/products/tham-luoi-chui-chan-50x80cm/1.png', price: 490000 },
+        { label: 'Mẫu 2 (50x80cm)', image: 'assets/products/tham-luoi-chui-chan-50x80cm/2.png', price: 490000 },
+        { label: 'Mẫu 3 (50x80cm)', image: 'assets/products/tham-luoi-chui-chan-50x80cm/3.png', price: 490000 }
+      ]
+    },
+    {
+      id: 'tham-de-cua',
+      name: 'Thảm để cửa',
+      price: 590000,
+      category: 'turkish',
+      image: 'assets/products/tham-de-cua/1.png',
+      material: 'Sợi dệt cao cấp bền đẹp, dễ vệ sinh',
+      origin: 'Nhập khẩu cao cấp',
+      thickness: '9 mm',
+      warranty: '12 tháng',
+      description: STANDARD_DETAIL_TEXT,
+      variants: [
+        { label: 'Mẫu 1', image: 'assets/products/tham-de-cua/1.png', price: 590000 },
+        { label: 'Mẫu 2', image: 'assets/products/tham-de-cua/2.png', price: 590000 },
+        { label: 'Mẫu 3', image: 'assets/products/tham-de-cua/3.png', price: 590000 }
       ]
     }
   ];
@@ -690,9 +673,7 @@
                   <span class="spec-val">${escapeHTML(product.warranty)}</span>
                 </div>
               </div>
-              <p style="margin-top: 10px; font-size: 13.5px; color: var(--text-secondary); line-height: 1.5;">
-                ${escapeHTML(product.description)}
-              </p>
+              <p style="margin-top: 10px; font-size: 13.5px; color: var(--text-secondary); line-height: 1.65; white-space: pre-line;">${escapeHTML(product.description)}</p>
             </div>
           </div>
         </div>
@@ -1132,8 +1113,8 @@
     if (productId === null) {
       editingProductId = '__NEW__';
       editingVariants = [
-        { label: '160 x 230 cm', image: IMG_GEOMETRIC, price: 4590000 },
-        { label: '200 x 300 cm', image: IMG_GEOMETRIC, price: 6290000 }
+        { label: 'Mẫu 1', image: DEFAULT_PRODUCT_IMAGE, price: 4590000 },
+        { label: 'Mẫu 2', image: DEFAULT_PRODUCT_IMAGE, price: 4590000 }
       ];
     } else {
       const p = products.find((item) => item.id === productId);
@@ -1157,12 +1138,12 @@
       name: '',
       price: 4590000,
       category: 'turkish',
-      image: IMG_GEOMETRIC,
-      material: 'Sợi dệt Thổ Nhĩ Kỳ cao cấp',
-      origin: 'Thổ Nhĩ Kỳ',
+      image: DEFAULT_PRODUCT_IMAGE,
+      material: 'Chất liệu cao cấp, bề mặt mềm mịn',
+      origin: 'Nhập khẩu cao cấp',
       thickness: '12 mm',
       warranty: '24 tháng',
-      description: ''
+      description: STANDARD_DETAIL_TEXT
     };
 
     card.innerHTML = `
@@ -1199,9 +1180,9 @@
                     Chọn ảnh từ máy
                     <input type="file" id="ed-image-file" accept="image/*" class="hidden" />
                   </label>
-                  <button type="button" class="btn-secondary admin-btn-sm" data-preset-img="${IMG_GEOMETRIC}">Mẫu Kem</button>
-                  <button type="button" class="btn-secondary admin-btn-sm" data-preset-img="${IMG_ROUND}">Mẫu Tròn</button>
-                  <button type="button" class="btn-secondary admin-btn-sm" data-preset-img="${IMG_BOTANICAL}">Mẫu Đen Vàng</button>
+                  <button type="button" class="btn-secondary admin-btn-sm" data-preset-img="assets/products/tham-lua-tao-cat-khang-nuoc/1.png">Lụa tảo cát</button>
+                  <button type="button" class="btn-secondary admin-btn-sm" data-preset-img="assets/products/tham-tron-det-cao-cap/1.png">Thảm tròn</button>
+                  <button type="button" class="btn-secondary admin-btn-sm" data-preset-img="assets/products/tham-tuyet-nhung-cao-cap/1.jpg">Tuyết nhung</button>
                 </div>
               </div>
             </div>
@@ -1298,9 +1279,9 @@
     document.getElementById('btn-add-variant').addEventListener('click', () => {
       syncVariantsFromDOM();
       editingVariants.push({
-        label: 'Kích thước mới',
+        label: 'Mẫu mới',
         price: Number(document.getElementById('ed-price').value) || 4590000,
-        image: edImageInput.value.trim() || IMG_GEOMETRIC
+        image: edImageInput.value.trim() || DEFAULT_PRODUCT_IMAGE
       });
       renderProductEditorForm();
     });
@@ -1341,7 +1322,7 @@
         name: document.getElementById('ed-name').value.trim(),
         price: Number(document.getElementById('ed-price').value) || 0,
         category: document.getElementById('ed-category').value,
-        image: edImageInput.value.trim() || IMG_GEOMETRIC,
+        image: edImageInput.value.trim() || DEFAULT_PRODUCT_IMAGE,
         material: document.getElementById('ed-material').value.trim(),
         origin: document.getElementById('ed-origin').value.trim(),
         thickness: document.getElementById('ed-thickness').value.trim(),
