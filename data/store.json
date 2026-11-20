@@ -27,11 +27,179 @@
   ],
   "products": [
     {
-      "id": "sp-1795073139102",
-      "name": "Thảm Dạ Salu",
-      "price": 1050000,
-      "category": "lua-tao-cat",
-      "image": "assets/products/uploads/img_1795073095954_d4b502.jpg",
+      "id": "sp-1795145617659",
+      "name": "Thảm Lụa Tảo Kháng Nước 2 Màu",
+      "price": 5950000,
+      "category": "tham-lua",
+      "image": "assets/products/uploads/img_1795145604809_a04eca.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "200 x 300 cm",
+          "price": 5950000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795145579221",
+      "name": "Thảm Lụa Tảo Kháng Nước 2 Màu",
+      "price": 5950000,
+      "category": "tham-lua",
+      "image": "assets/products/uploads/img_1795145572194_926204.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "200 x 300 cm",
+          "price": 5950000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795145517509",
+      "name": "Thảm Lụa Tảo Kháng Nước 2 Màu",
+      "price": 5950000,
+      "category": "tham-lua",
+      "image": "assets/products/uploads/img_1795145501591_159def.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "200 x 300 cm",
+          "price": 5950000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795145482753",
+      "name": "Thảm Lụa Tảo Kháng Nước 2 Màu",
+      "price": 5950000,
+      "category": "tham-lua",
+      "image": "assets/products/uploads/img_1795145479411_1cd4d1.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "200 x 300 cm",
+          "price": 5950000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795145364595",
+      "name": "Thảm Tảo Lụa Kháng Nước",
+      "price": 2550000,
+      "category": "tham-lua",
+      "image": "assets/products/uploads/img_1795145348165_2a5351.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "160 x 230 cm",
+          "price": 2550000
+        },
+        {
+          "label": "200 x 300 cm",
+          "price": 5550000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795145317909",
+      "name": "Thảm Tảo Lụa Kháng Nước",
+      "price": 2550000,
+      "category": "tham-lua",
+      "image": "assets/products/uploads/img_1795145304857_ab47ee.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "160 x 230 cm",
+          "price": 2550000
+        },
+        {
+          "label": "200 x 300 cm",
+          "price": 5550000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795145271564",
+      "name": "Thảm Tảo Lụa Kháng Nước",
+      "price": 2550000,
+      "category": "tham-lua",
+      "image": "assets/products/uploads/img_1795145259958_5bf934.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "160 x 230 cm",
+          "price": 2550000
+        },
+        {
+          "label": "200 x 300 cm",
+          "price": 5550000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795145218652",
+      "name": "Thảm Tảo Lụa Kháng Nước",
+      "price": 2550000,
+      "category": "tham-lua",
+      "image": "assets/products/uploads/img_1795145238909_086793.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "160 x 230 cm",
+          "price": 2550000
+        },
+        {
+          "label": "200 x 300 cm",
+          "price": 5550000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795145061233",
+      "name": "Thảm Trải Sàn Lagan Tròn Dệt Nước",
+      "price": 2490000,
+      "category": "tham-tron",
+      "image": "assets/products/uploads/img_1795145047143_d70630.jpg",
       "material": "Chất liệu cao cấp, bề mặt mềm mịn",
       "origin": "Nhập khẩu cao cấp",
       "thickness": "12 mm",
@@ -40,25 +208,147 @@
       "variants": [
         {
           "label": "Mẫu 1",
-          "image": "assets/products/uploads/img_1795073100079_3fb700.jpg"
+          "image": "assets/products/uploads/img_1795145053842_dafd6b.jpg"
         },
         {
           "label": "Mẫu 2",
-          "image": "assets/products/uploads/img_1795073102579_9f6353.jpg"
-        },
-        {
-          "label": "Mẫu 3",
-          "image": "assets/products/uploads/img_1795073106644_472aa0.jpg"
-        },
-        {
-          "label": "Mẫu 4",
-          "image": "assets/products/uploads/img_1795073109014_74dd5b.jpg"
-        },
-        {
-          "label": "Mẫu 5",
-          "image": "assets/products/uploads/img_1795073111728_c1e0e0.jpg"
+          "image": "assets/products/uploads/img_1795145056766_19a0c6.jpg"
         }
       ],
+      "sizes": [
+        {
+          "label": "200 x 300 cm",
+          "price": 2490000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795144903029",
+      "name": "Thảm Dạ Salu Màu Nâu",
+      "price": 1050000,
+      "category": "lua-tao-cat",
+      "image": "assets/products/uploads/img_1795144902025_48fa84.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "160 x 230 cm",
+          "price": 1050000
+        },
+        {
+          "label": "200 x 300 cm",
+          "price": 1850000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795144862313",
+      "name": "Thảm Dạ Salu Màu Be",
+      "price": 1050000,
+      "category": "lua-tao-cat",
+      "image": "assets/products/uploads/img_1795144860582_c587d0.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "160 x 230 cm",
+          "price": 1050000
+        },
+        {
+          "label": "200 x 300 cm",
+          "price": 1850000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795144815144",
+      "name": "Thảm Dạ Salu Màu Xám",
+      "price": 1050000,
+      "category": "lua-tao-cat",
+      "image": "assets/products/uploads/img_1795144812594_72fcfc.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "160 x 230 cm",
+          "price": 1050000
+        },
+        {
+          "label": "200 x 300 cm",
+          "price": 1850000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795144767977",
+      "name": "Thảm Dạ Salu Màu Đen Xám",
+      "price": 1050000,
+      "category": "lua-tao-cat",
+      "image": "assets/products/uploads/img_1795144747122_dd010e.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "160 x 230 cm",
+          "price": 4590000
+        },
+        {
+          "label": "200 x 300 cm",
+          "price": 5990000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795144699218",
+      "name": "Thảm Dạ Salu Màu Nâu Be",
+      "price": 1050000,
+      "category": "lua-tao-cat",
+      "image": "assets/products/uploads/img_1795144688716_9df5bc.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
+      "sizes": [
+        {
+          "label": "160 x 230 cm",
+          "price": 1050000
+        },
+        {
+          "label": "200 x 300 cm",
+          "price": 1850000
+        }
+      ]
+    },
+    {
+      "id": "sp-1795073139102",
+      "name": "Thảm Dạ Salu Màu Xám Be",
+      "price": 1050000,
+      "category": "lua-tao-cat",
+      "image": "assets/products/uploads/img_1795073095954_d4b502.jpg",
+      "material": "Chất liệu cao cấp, bề mặt mềm mịn",
+      "origin": "Nhập khẩu cao cấp",
+      "thickness": "12 mm",
+      "warranty": "24 tháng",
+      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
+      "variants": [],
       "sizes": [
         {
           "label": "160 x 230 cm",
@@ -72,37 +362,16 @@
     },
     {
       "id": "tham-lua-tao-cat-khang-nuoc",
-      "name": "Thảm lụa tảo cát kháng nước",
+      "name": "Thảm Tảo Lụa Kháng Nước",
       "price": 2550000,
-      "category": "lua-tao-cat",
-      "image": "assets/products/tham-lua-tao-cat-khang-nuoc/1.png",
+      "category": "tham-lua",
+      "image": "assets/products/uploads/img_1795145732522_468a29.jpg",
       "material": "Lụa tảo cát kháng nước cao cấp",
       "origin": "Nhập khẩu cao cấp",
       "thickness": "10 mm",
       "warranty": "24 tháng",
       "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
-      "variants": [
-        {
-          "label": "Mẫu 1",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc/1.png"
-        },
-        {
-          "label": "Mẫu 2",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc/2.png"
-        },
-        {
-          "label": "Mẫu 3",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc/3.png"
-        },
-        {
-          "label": "Mẫu 4",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc/4.png"
-        },
-        {
-          "label": "Mẫu 5",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc/5.png"
-        }
-      ],
+      "variants": [],
       "sizes": [
         {
           "label": "160 x 230 cm",
@@ -119,190 +388,17 @@
       "name": "Thảm Lụa Tảo Kháng Nước 2 Màu",
       "price": 5950000,
       "category": "tham-lua",
-      "image": "assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/1.png",
+      "image": "assets/products/uploads/img_1795145707888_3e27bd.jpg",
       "material": "Lụa tảo cát kháng nước khổ lớn",
       "origin": "Nhập khẩu cao cấp",
       "thickness": "10 mm",
       "warranty": "24 tháng",
       "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
-      "variants": [
-        {
-          "label": "Mẫu 1",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/1.png"
-        },
-        {
-          "label": "Mẫu 2",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/2.png"
-        },
-        {
-          "label": "Mẫu 3",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/3.png"
-        },
-        {
-          "label": "Mẫu 4",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/4.png"
-        },
-        {
-          "label": "Mẫu 5",
-          "image": "assets/products/tham-lua-tao-cat-khang-nuoc-2mx3m/5.png"
-        }
-      ],
+      "variants": [],
       "sizes": [
         {
           "label": "200 x 300 cm",
           "price": 5950000
-        }
-      ]
-    },
-    {
-      "id": "tham-tron-det-cao-cap",
-      "name": "Thảm tròn dệt cao cấp",
-      "price": 4590000,
-      "category": "tham-tron",
-      "image": "assets/products/tham-tron-det-cao-cap/1.png",
-      "material": "Sợi dệt cao cấp chống bám bụi",
-      "origin": "Nhập khẩu cao cấp",
-      "thickness": "12 mm",
-      "warranty": "24 tháng",
-      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
-      "variants": [
-        {
-          "label": "Mẫu 1",
-          "image": "assets/products/tham-tron-det-cao-cap/1.png"
-        },
-        {
-          "label": "Mẫu 2",
-          "image": "assets/products/tham-tron-det-cao-cap/2.png"
-        },
-        {
-          "label": "Mẫu 3",
-          "image": "assets/products/tham-tron-det-cao-cap/3.png"
-        },
-        {
-          "label": "Mẫu 4",
-          "image": "assets/products/tham-tron-det-cao-cap/4.png"
-        },
-        {
-          "label": "Mẫu 5",
-          "image": "assets/products/tham-tron-det-cao-cap/5.png"
-        },
-        {
-          "label": "Mẫu 6",
-          "image": "assets/products/tham-tron-det-cao-cap/6.png"
-        }
-      ],
-      "sizes": [
-        {
-          "label": "Đường kính 160 cm",
-          "price": 4590000
-        },
-        {
-          "label": "Đường kính 200 cm",
-          "price": 5690000
-        },
-        {
-          "label": "Đường kính 240 cm",
-          "price": 6990000
-        }
-      ]
-    },
-    {
-      "id": "tham-tron-long-cuu-de-det-1m6",
-      "name": "Thảm tròn lông cừu đế dệt size 1m6",
-      "price": 3890000,
-      "category": "tham-tron",
-      "image": "assets/products/tham-tron-long-cuu-de-det-1m6/1.jpg",
-      "material": "Lông cừu mềm mịn, đế dệt chống trượt",
-      "origin": "Nhập khẩu cao cấp",
-      "thickness": "15 mm",
-      "warranty": "24 tháng",
-      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
-      "variants": [
-        {
-          "label": "Mẫu 1",
-          "image": "assets/products/tham-tron-long-cuu-de-det-1m6/1.jpg"
-        },
-        {
-          "label": "Mẫu 2",
-          "image": "assets/products/tham-tron-long-cuu-de-det-1m6/2.png"
-        },
-        {
-          "label": "Mẫu 3",
-          "image": "assets/products/tham-tron-long-cuu-de-det-1m6/3.png"
-        },
-        {
-          "label": "Mẫu 4",
-          "image": "assets/products/tham-tron-long-cuu-de-det-1m6/4.png"
-        },
-        {
-          "label": "Mẫu 5",
-          "image": "assets/products/tham-tron-long-cuu-de-det-1m6/5.png"
-        },
-        {
-          "label": "Mẫu 6",
-          "image": "assets/products/tham-tron-long-cuu-de-det-1m6/6.png"
-        },
-        {
-          "label": "Mẫu 7",
-          "image": "assets/products/tham-tron-long-cuu-de-det-1m6/7.jpg"
-        }
-      ],
-      "sizes": [
-        {
-          "label": "Đường kính 160 cm",
-          "price": 3890000
-        },
-        {
-          "label": "Đường kính 200 cm",
-          "price": 4890000
-        }
-      ]
-    },
-    {
-      "id": "tham-tuyet-nhung-cao-cap",
-      "name": "Thảm tuyết nhung cao cấp",
-      "price": 4590000,
-      "category": "tham-nhung",
-      "image": "assets/products/tham-tuyet-nhung-cao-cap/1.jpg",
-      "material": "Tuyết nhung siêu mịn cao cấp",
-      "origin": "Nhập khẩu cao cấp",
-      "thickness": "14 mm",
-      "warranty": "24 tháng",
-      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
-      "variants": [
-        {
-          "label": "Mẫu 1",
-          "image": "assets/products/tham-tuyet-nhung-cao-cap/1.jpg"
-        },
-        {
-          "label": "Mẫu 2",
-          "image": "assets/products/tham-tuyet-nhung-cao-cap/2.jpg"
-        },
-        {
-          "label": "Mẫu 3",
-          "image": "assets/products/tham-tuyet-nhung-cao-cap/3.jpg"
-        },
-        {
-          "label": "Mẫu 4",
-          "image": "assets/products/tham-tuyet-nhung-cao-cap/4.jpg"
-        },
-        {
-          "label": "Mẫu 5",
-          "image": "assets/products/tham-tuyet-nhung-cao-cap/5.jpg"
-        }
-      ],
-      "sizes": [
-        {
-          "label": "160 x 230 cm",
-          "price": 4590000
-        },
-        {
-          "label": "200 x 300 cm",
-          "price": 5890000
-        },
-        {
-          "label": "240 x 340 cm",
-          "price": 7290000
         }
       ]
     },
@@ -339,42 +435,6 @@
         {
           "label": "60 x 90 cm",
           "price": 590000
-        }
-      ]
-    },
-    {
-      "id": "tham-de-cua",
-      "name": "Thảm để cửa",
-      "price": 590000,
-      "category": "tham-cua",
-      "image": "assets/products/tham-de-cua/1.png",
-      "material": "Sợi dệt cao cấp bền đẹp, dễ vệ sinh",
-      "origin": "Nhập khẩu cao cấp",
-      "thickness": "9 mm",
-      "warranty": "12 tháng",
-      "description": "✔️ Chất liệu cao cấp, bề mặt mềm mịn, êm chân\n✔️ Màu trung tính, hợp mọi phong cách nội thất\n✔️ Nhiều kích thước cho phòng khách và phòng ngủ",
-      "variants": [
-        {
-          "label": "Mẫu 1",
-          "image": "assets/products/tham-de-cua/1.png"
-        },
-        {
-          "label": "Mẫu 2",
-          "image": "assets/products/tham-de-cua/2.png"
-        },
-        {
-          "label": "Mẫu 3",
-          "image": "assets/products/tham-de-cua/3.png"
-        }
-      ],
-      "sizes": [
-        {
-          "label": "50 x 80 cm",
-          "price": 590000
-        },
-        {
-          "label": "60 x 90 cm",
-          "price": 690000
         }
       ]
     }
